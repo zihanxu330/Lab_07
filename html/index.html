@@ -3,9 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web App</title>
+    <title>徐子涵 - 生产环境 🚀</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0a192f, #112240, #0a192f);
+            color: #ccd6f6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 44px;
+            max-width: 560px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(100,255,218,0.15);
+        }
+        .prod-badge {
+            display: inline-block;
+            background: rgba(255,107,107,0.2);
+            color: #ff6b6b;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,107,107,0.3);
+        }
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(100,255,218,0.3);
+            margin-bottom: 20px;
+            background: #112240;
+        }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; color: #e6f1ff; }
+        .tagline { color: #64ffda; font-size: 14px; margin-bottom: 20px; font-family: 'Courier New', monospace; }
+        .info { text-align: left; margin: 20px 0; }
+        .info p { margin: 10px 0; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+        .info .label { color: #8892b0; min-width: 70px; }
+        .badge {
+            display: inline-block;
+            background: rgba(100,255,218,0.1);
+            color: #64ffda;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 3px;
+        }
+        .server-ip {
+            margin-top: 24px;
+            padding: 12px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 12px;
+            font-size: 13px;
+            color: #64ffda;
+            font-family: 'Courier New', monospace;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #495670;
+        }
+        .git-info {
+            margin-top: 16px;
+            padding: 8px;
+            background: rgba(255,215,0,0.08);
+            border-radius: 8px;
+            font-size: 11px;
+            color: #ffd700;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, 徐子涵</h1>
+    <div class="card">
+        <div class="prod-badge">🏭 PRODUCTION</div>
+
+        <!-- 照片占位 -->
+        <img src="avatar.jpg" alt="头像" class="avatar" onerror="this.style.display='none'">
+
+        <h1>徐子涵</h1>
+        <div class="tagline">🚀 生产环境 · PM2 + Nginx 反向代理</div>
+
+        <div class="info">
+            <p><span class="label">🎓 学校</span>  XX 大学</p>
+            <p><span class="label">📧 邮箱</span>  zihan.xu@example.com</p>
+            <p><span class="label">📍 位置</span>  中国 · 上海</p>
+            <p><span class="label">⚙️ 栈</span></p>
+            <p style="margin-top: -4px;">
+                <span class="badge">Node.js</span>
+                <span class="badge">Express</span>
+                <span class="badge">PM2</span>
+                <span class="badge">Nginx</span>
+                <span class="badge">GitHub Actions</span>
+            </p>
+        </div>
+
+        <div class="git-info">
+            🌿 分支: prod · 自动构建部署 (deploy-prod.yml)
+        </div>
+
+        <div class="server-ip" id="ipDisplay">
+            ⏳ 正在获取服务器 IP…
+        </div>
+
+        <div class="footer">
+            🏭 Production Environment · CI/CD Pipeline
+        </div>
+    </div>
+
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById('ipDisplay').innerHTML =
+                    '🌐 服务器 IP：<strong>' + d.ip + '</strong>';
+            })
+            .catch(() => {
+                document.getElementById('ipDisplay').innerHTML =
+                    '🌐 服务器 IP：无法获取';
+            });
+    </script>
 </body>
 </html>
