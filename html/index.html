@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>徐子涵 - 开发环境</title>
+    <title>Zihan Xu - Dev Environment</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -90,17 +90,16 @@
     <div class="card">
         <div class="dev-badge">💻 DEVELOPMENT</div>
 
-        <!-- 照片占位：替换 avatar.jpg 为你的真实照片 -->
-        <img src="avatar.jpg" alt="头像" class="avatar" onerror="this.style.display='none'">
+        <img src="avatar.jpg" alt="Avatar" class="avatar" onerror="this.style.display='none'">
 
-        <h1>徐子涵</h1>
-        <div class="tagline">💻 全栈开发 · 云计算爱好者</div>
+        <h1>Zihan Xu</h1>
+        <div class="tagline">💻 Full-Stack Developer · Cloud Computing Enthusiast</div>
 
         <div class="info">
-            <p><span class="label">🎓 学校</span>  XX 大学</p>
-            <p><span class="label">📧 邮箱</span>  zihan.xu@example.com</p>
-            <p><span class="label">📍 位置</span>  中国 · 上海</p>
-            <p><span class="label">💡 技能</span></p>
+            <p><span class="label">🎓 School</span>  XX University</p>
+            <p><span class="label">📧 Email</span>  zihan.xu@example.com</p>
+            <p><span class="label">📍 Location</span>  Shanghai, China</p>
+            <p><span class="label">💡 Skills</span></p>
             <p style="margin-top: -4px;">
                 <span class="badge">Python</span>
                 <span class="badge">JavaScript</span>
@@ -112,11 +111,11 @@
         </div>
 
         <div class="git-info">
-            🌿 分支: master · 自动部署 (deploy-on-push.yml)
+            🌿 Branch: master · Auto-Deploy (deploy-on-push.yml)
         </div>
 
         <div class="server-ip" id="ipDisplay">
-            ⏳ 正在获取服务器 IP…
+            ⏳ Fetching server IP…
         </div>
 
         <div class="footer">
@@ -125,16 +124,15 @@
     </div>
 
     <script>
-        // 获取并显示服务器 IP
         fetch('https://api.ipify.org?format=json')
             .then(r => r.json())
             .then(d => {
                 document.getElementById('ipDisplay').innerHTML =
-                    '🌐 服务器 IP：<strong>' + d.ip + '</strong>';
+                    '🌐 Server IP：<strong>' + d.ip + '</strong>';
             })
             .catch(() => {
                 document.getElementById('ipDisplay').innerHTML =
-                    '🌐 服务器 IP：无法获取';
+                    '🌐 Server IP：unavailable';
             });
     </script>
 </body>
