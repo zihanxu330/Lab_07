@@ -9,5 +9,16 @@
 .DS_Store
 Thumbs.db
 
-# Node modules (if any)
+# Node modules
 node_modules/
+
+# Environment files
+.env
+*.local
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# npm cache (from local npm install)
+clean/

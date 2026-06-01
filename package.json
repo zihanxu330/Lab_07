@@ -1,0 +1,13 @@
+{
+  "name": "lab07-auto-deploy",
+  "version": "1.0.0",
+  "description": "自动构建部署演示 - Lab 07",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Build complete - static files ready'"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
